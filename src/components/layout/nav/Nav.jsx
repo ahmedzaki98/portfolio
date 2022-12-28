@@ -3,45 +3,51 @@ import "./nav.css";
 import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
-import { RiServiceLine } from "react-icons/ri";
+import { BsFillJournalBookmarkFill } from "react-icons/bs";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { useState } from "react";
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState("");
+  
+  const navId = (id) => {
+    setActiveNav(id);
+    setTimeout(() => setActiveNav(""), 2000);
+  };
+
   return (
     <nav>
       <a
         href="#"
-        onClick={() => setActiveNav("#")}
+        onClick={() => navId("#")}
         className={activeNav === "#" ? "active" : ""}
       >
         <AiOutlineHome />
       </a>
       <a
         href="#about"
-        onClick={() => setActiveNav("#about")}
+        onClick={() => navId("#about")}
         className={activeNav === "#about" ? "active" : ""}
       >
         <AiOutlineUser />
       </a>
       <a
         href="#experience"
-        onClick={() => setActiveNav("#experience")}
+        onClick={() => navId("#experience")}
         className={activeNav === "#experience" ? "active" : ""}
       >
         <BiBook />
       </a>
       <a
-        href="#services"
-        onClick={() => setActiveNav("#services")}
+        href="#portfolio"
+        onClick={() => navId("#services")}
         className={activeNav === "#services" ? "active" : ""}
       >
-        <RiServiceLine />
+        <BsFillJournalBookmarkFill />
       </a>
       <a
         href="#contact"
-        onClick={() => setActiveNav("#contact")}
+        onClick={() => navId("#contact")}
         className={activeNav === "#contact" ? "active" : ""}
       >
         <BiMessageSquareDetail />
