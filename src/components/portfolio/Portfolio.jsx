@@ -4,7 +4,7 @@ import "./portfolio.css";
 import { Pagination, A11y } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import p5 from "../../assets/project-5.jpg";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -52,6 +52,28 @@ const Portfolio = () => {
         slidesPerView={1}
         pagination={{ clickable: true }}
       >
+        <SwiperSlide className="portfolio_item">
+          <div className="portfolio_item-image">
+            <img src={p5} alt="Zsocial" />
+          </div>
+          <h3>Zsocial</h3>
+          <div className="portfolio_item-cta">
+            <a
+              href="https://github.com/ahmedzaki98/react-social-media-app-Frontend-"
+              className="btn"
+              target="_blank"
+            >
+              Github-Frontend
+            </a>
+            <a
+              href="https://github.com/ahmedzaki98/-react-social-media-app-Backend-"
+              className="btn btn-primary"
+              target="_blank"
+            >
+              Github-Backend
+            </a>
+          </div>
+        </SwiperSlide>
         {data.map(({ id, image, title, github, demo }) => {
           if (demo !== "") {
             return (
