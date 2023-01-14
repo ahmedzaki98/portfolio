@@ -57,7 +57,7 @@ const Portfolio = () => {
             <img src={p5} alt="Zsocial" />
           </div>
           <h3>Zsocial</h3>
-          <div className="portfolio_item-cta">
+          <div className="portfolio_item-cta spc">
             <a
               href="https://github.com/ahmedzaki98/react-social-media-app-Frontend-"
               className="btn"
