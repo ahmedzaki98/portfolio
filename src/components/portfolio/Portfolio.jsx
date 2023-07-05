@@ -6,8 +6,8 @@ import { Pagination, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import p5 from "../../assets/project-5.jpg";
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+// import "swiper/css";
+// import "swiper/css/pagination";
 
 const data = [
   {
@@ -19,7 +19,7 @@ const data = [
   },
   {
     id: 2,
-    image: require("../../assets/pr-2.png"),
+    image: require("../../assets/pr-2.jpg"),
     title: "My Vue Music",
     github: "https://github.com/ahmedzaki98/vue-music-player",
     demo: "https://my-vue-music.netlify.app/",

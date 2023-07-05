@@ -7,6 +7,7 @@ import Portfolio from "./components/portfolio/Portfolio";
 // import Testimonials from "./components/tetimonials/Testimonials";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/layout/footer/Footer";
+import Projects from "./components/projects/Projects";
 
 const App = () => {
   return (
@@ -15,8 +16,9 @@ const App = () => {
       <Nav />
       <About />
       <Experience />
-      <Portfolio />
+      {/* <Portfolio /> */}
       {/* <Testimonials /> */}
+      <Projects />
       <Contact />
       <Footer />
     </React.Fragment>

@@ -69,8 +69,13 @@
 }
 
 .about_content p {
+  white-space: pre-line;
   margin: 2rem 0 2.6rem;
   color: var(--color-light);
+}
+.about_content p::after {
+  content: "\a";
+  white-space: pre;
 }
 .about_content h3 {
   color: var(--color-white);
