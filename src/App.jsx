@@ -8,10 +8,24 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/layout/footer/Footer";
 import Projects from "./components/projects/Projects";
+import AnimatedCursor from "react-animated-cursor";
 
 const App = () => {
   return (
     <React.Fragment>
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={35}
+        innerScale={1}
+        outerScale={1.7}
+        outerAlpha={0}
+        outerStyle={{
+          border: "3px solid rgba(255, 255, 255, 0.6)",
+        }}
+        innerStyle={{
+          backgroundColor: "rgba(255, 255, 255, 0.6)",
+        }}
+      />
       <Header />
       <Nav />
       <About />

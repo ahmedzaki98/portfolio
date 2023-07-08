@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./about.css";
 import MeAbout from "../../assets/me-about.jpg";
 import { FaAward } from "react-icons/fa";
 import { VscFolderLibrary } from "react-icons/vsc";
+import AOS from "aos";
 
 const About = () => {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 1500,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+  }, []);
   return (
-    <section id="about">
+    <section id="about" data-aos="fade-up">
       <h5>Get To Know</h5>
       <h2>About Me</h2>
       <div className="container about_container">

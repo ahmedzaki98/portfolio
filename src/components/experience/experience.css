@@ -15,7 +15,7 @@
 .experience_container > div:hover {
   background: transparent;
   border-color: var(--color-primary-variant);
-  cursor: default;
+  /* cursor: default; */
 }
 
 .experience_container > div h3 {

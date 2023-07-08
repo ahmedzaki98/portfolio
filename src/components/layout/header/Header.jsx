@@ -1,11 +1,10 @@
 import React from "react";
 import CTA from "./CTA";
-import "./header.css";
+import "./header.scss";
 import ME from "../../../assets/me.png";
 import HeaderSocials from "./HeaderSocials";
 
 const Header = () => {
-  
   return (
     <header>
       <div className="container header_container">
@@ -17,7 +16,7 @@ const Header = () => {
         <div className="me">
           <img src={ME} alt="me" />
         </div>
-        <a className="scroll_down" href="#contact">
+        <a className="scroll_down" href="#contact" style={{ fontSize: "18px" }}>
           Scroll Down
         </a>
       </div>

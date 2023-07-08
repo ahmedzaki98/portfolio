@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./contact.css";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
 import { BsWhatsapp } from "react-icons/bs";
 import { useRef } from "react";
 import emailjs from "emailjs-com";
+import Aos from "aos";
 
 const Contact = () => {
   const form = useRef();
@@ -19,9 +20,17 @@ const Contact = () => {
     );
     e.target.reset();
   };
+  useEffect(() => {
+    Aos.init({
+      offset: 200,
+      duration: 1500,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+  }, []);
 
   return (
-    <section id="contact">
+    <section id="contact" data-aos="fade-up">
       <h5>Get In Touch</h5>
       <h2>Contact Me!</h2>
       <div className="container contact_container">
