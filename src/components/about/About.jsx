@@ -61,7 +61,7 @@ const About = () => {
                 Almusand Co, Front-end Developer
               </strong>
               <strong style={{ color: "rgba(255, 255, 255, 0.771)" }}>
-                01/2023 – present
+                12/2022 – 07/2023
               </strong>
             </article>
             <strong>Cooperated </strong>with <strong>backend developers</strong>
