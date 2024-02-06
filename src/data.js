@@ -24,7 +24,7 @@ export const data = [
   },
   {
     id: 6,
-    image: require("./assets/jm.png"),
+    image: require("./assets/jm.jpg"),
     title: "Souq Al-Jazeera",
     live: "https://app.souqaljazeera.shop/",
     disc: `It's an E-commerce freelance web application. 

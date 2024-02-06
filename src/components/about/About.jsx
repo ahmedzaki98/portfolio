@@ -4,8 +4,13 @@ import MeAbout from "../../assets/me-about.jpg";
 import { FaAward } from "react-icons/fa";
 import { VscFolderLibrary } from "react-icons/vsc";
 import AOS from "aos";
+import { useInView } from "react-intersection-observer";
 
-const About = () => {
+const About = ({ onViewHandler }) => {
+  const [sectionRef, sectionInView] = useInView({ threshold: 0.5 });
+  if (sectionInView) {
+    onViewHandler("about");
+  }
   useEffect(() => {
     AOS.init({
       offset: 200,
@@ -15,7 +20,7 @@ const About = () => {
     });
   }, []);
   return (
-    <section id="about" data-aos="fade-up">
+    <section id="about" data-aos="fade-up" ref={sectionRef}>
       <h5>Get To Know</h5>
       <h2>About Me</h2>
       <div className="container about_container">
@@ -29,7 +34,7 @@ const About = () => {
             <article className="about_card">
               <FaAward className="about_icon" />
               <h5>Experience</h5>
-              <small>1 year</small>
+              <small>+1 year</small>
             </article>
             <article className="about_card">
               <VscFolderLibrary className="about_icon" />
@@ -61,7 +66,7 @@ const About = () => {
                 Almusand Co, Front-end Developer
               </strong>
               <strong style={{ color: "rgba(255, 255, 255, 0.771)" }}>
-                12/2022 – 07/2023
+                01/2023 – present
               </strong>
             </article>
             <strong>Cooperated </strong>with <strong>backend developers</strong>

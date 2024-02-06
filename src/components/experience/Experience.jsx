@@ -2,8 +2,13 @@ import React, { useEffect } from "react";
 import "./experience.css";
 import { BsPatchCheckFill } from "react-icons/bs";
 import Aos from "aos";
+import { useInView } from "react-intersection-observer";
 
-const Experience = () => {
+const Experience = ({ onViewHandler }) => {
+  const [sectionRef, sectionInView] = useInView({ threshold: 0.5 });
+  if (sectionInView) {
+    onViewHandler("experience");
+  }
   useEffect(() => {
     Aos.init({
       offset: 200,
@@ -13,7 +18,7 @@ const Experience = () => {
     });
   }, []);
   return (
-    <section id="experience" data-aos="fade-up">
+    <section id="experience" data-aos="fade-up" ref={sectionRef}>
       <h5>What skills I Have</h5>
       <h2>My Skills</h2>
       <div className="container experience_container">

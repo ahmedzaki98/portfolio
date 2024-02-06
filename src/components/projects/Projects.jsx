@@ -3,8 +3,15 @@ import { data } from "../../data";
 import "./project.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ReadMore from "../ui/ReadMore";
+import { useInView } from "react-intersection-observer";
 
-const Projects = () => {
+const Projects = ({ onViewHandler }) => {
+  const { ref, inView, entry } = useInView({ threshold: 0 });
+  if (inView) {
+    onViewHandler("portfolio");
+  }
+
   useEffect(() => {
     AOS.init({
       offset: 200,
@@ -13,8 +20,9 @@ const Projects = () => {
       delay: 100,
     });
   }, []);
+
   return (
-    <section className="projects-container" id="portfolio">
+    <section ref={ref} className="projects-container" id="portfolio">
       <h5>My Recent Work</h5>
       <h2>Portfolio</h2>
       {data.map(({ id, image, title, github, demo, disc, live }) => (
@@ -24,7 +32,7 @@ const Projects = () => {
           </div>
           <div className="project-description">
             <h2>{title}</h2>
-            {disc && <p data-aos="fade-up">{disc}</p>}
+            {disc && <ReadMore data-aos="fade-up">{disc}</ReadMore>}
             <div className="footer">
               {github && (
                 <button>

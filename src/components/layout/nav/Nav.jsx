@@ -5,51 +5,27 @@ import { AiOutlineUser } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
 import { BsFillJournalBookmarkFill } from "react-icons/bs";
 import { BiMessageSquareDetail } from "react-icons/bi";
-import { useState } from "react";
 
-const Nav = () => {
-  const [activeNav, setActiveNav] = useState("");
-  
-  const navId = (id) => {
-    setActiveNav(id);
-    setTimeout(() => setActiveNav(""), 2000);
-  };
-
+const Nav = ({ section }) => {
+  console.log(section);
   return (
     <nav>
-      <a
-        href="#"
-        onClick={() => navId("#")}
-        className={activeNav === "#" ? "active" : ""}
-      >
+      <a href="#header" className={section === "header" ? "active" : ""}>
         <AiOutlineHome />
       </a>
-      <a
-        href="#about"
-        onClick={() => navId("#about")}
-        className={activeNav === "#about" ? "active" : ""}
-      >
+      <a href="#about" className={section === "about" ? "active" : ""}>
         <AiOutlineUser />
       </a>
       <a
         href="#experience"
-        onClick={() => navId("#experience")}
-        className={activeNav === "#experience" ? "active" : ""}
+        className={section === "experience" ? "active" : ""}
       >
         <BiBook />
       </a>
-      <a
-        href="#portfolio"
-        onClick={() => navId("#services")}
-        className={activeNav === "#services" ? "active" : ""}
-      >
+      <a href="#portfolio" className={section === "portfolio" ? "active" : ""}>
         <BsFillJournalBookmarkFill />
       </a>
-      <a
-        href="#contact"
-        onClick={() => navId("#contact")}
-        className={activeNav === "#contact" ? "active" : ""}
-      >
+      <a href="#contact" className={section === "contact" ? "active" : ""}>
         <BiMessageSquareDetail />
       </a>
     </nav>

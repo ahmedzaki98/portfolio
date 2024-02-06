@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/layout/header/Header";
 import Nav from "./components/layout/nav/Nav";
 import About from "./components/about/About";
@@ -11,6 +11,12 @@ import Projects from "./components/projects/Projects";
 import AnimatedCursor from "react-animated-cursor";
 
 const App = () => {
+  const [sectionView, setSectionView] = useState("");
+
+  const onViewHandler = (section) => {
+    setSectionView(section);
+  };
+
   return (
     <React.Fragment>
       <AnimatedCursor
@@ -26,14 +32,14 @@ const App = () => {
           backgroundColor: "rgba(255, 255, 255, 0.6)",
         }}
       />
-      <Header />
-      <Nav />
-      <About />
-      <Experience />
+      <Header onViewHandler={onViewHandler} />
+      <Nav section={sectionView} />
+      <About onViewHandler={onViewHandler} />
+      <Experience onViewHandler={onViewHandler} />
       {/* <Portfolio /> */}
       {/* <Testimonials /> */}
-      <Projects />
-      <Contact />
+      <Projects onViewHandler={onViewHandler} />
+      <Contact onViewHandler={onViewHandler} />
       <Footer />
     </React.Fragment>
   );

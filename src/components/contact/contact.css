@@ -1,3 +1,8 @@
+#contact {
+  flex: 1;
+  max-height: 800px;
+}
+
 .container.contact_container {
   width: 58%;
   display: grid;

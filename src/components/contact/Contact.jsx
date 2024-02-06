@@ -6,8 +6,9 @@ import { BsWhatsapp } from "react-icons/bs";
 import { useRef } from "react";
 import emailjs from "emailjs-com";
 import Aos from "aos";
+import { useInView } from "react-intersection-observer";
 
-const Contact = () => {
+const Contact = ({ onViewHandler }) => {
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -20,6 +21,12 @@ const Contact = () => {
     );
     e.target.reset();
   };
+
+  const [sectionRef, sectionInView] = useInView({ threshold:1 });
+  if (sectionInView) {
+    onViewHandler("contact");
+  }
+
   useEffect(() => {
     Aos.init({
       offset: 200,
@@ -30,7 +37,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <section id="contact" data-aos="fade-up">
+    <section id="contact" data-aos="fade-up" ref={sectionRef}>
       <h5>Get In Touch</h5>
       <h2>Contact Me!</h2>
       <div className="container contact_container">
